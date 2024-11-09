@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editable Resume</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="cvMainDiv" class="cv-main-div">
+    <h1 style="color: #fff;">Generate Your CV</h1>
+    <form id="resumeForm">
+      <!-- Profile Picture -->
+      <label for="profilePicture">Profile Picture:</label>
+      <input type="file" id="profilePicture" name="profilePicture" style="color: #fff;"accept="image/*" />
+
+      <!-- Existing fields -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="title">Professional:</label>
+      <input type="text" id="title" name="title" />
+
+      <label for="aboutme">About Me:</label>
+      <input type="text" id="aboutme" name="aboutme" />
+
+      <!-- Add education -->
+      <div id="educationContainer">
+        <h3 class = "form-headings">Education</h3>
+        <div class="education-section">
+          <label for="educationInstitution">Institution:</label>
+          <input type="text" name="educationInstitution[]" style ="width: 100px;" />
+          <label for="educationDegree">Degree:</label>
+          <input type="text" name="educationDegree[]" style ="width: 100px;"  />
+          <label for="educationYear">Year:</label>
+          <input type="text" name="educationYear[]" style ="width: 100px;" />
+        </div>
+      </div>
+      <button type="button" id="addEducationBtn" class="small">Add More Education</button>
+
+      <!-- Add reference -->
+      <div id="referenceContainer">
+        <h3 class="form-headings">Reference</h3>
+        <div class="reference-section">
+          <label for="referenceName">Name:</label>
+          <input type="text" name="referenceName[]" />
+          <label for="referenceContact">Contact:</label>
+          <input type="text" name="referenceContact[]" />
+        </div>
+      </div>
+      <button type="button" id="addReferenceBtn" class="small">Add More Reference</button>
+
+      <!-- Other fields -->
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" />
+
+      <label for="website">Website:</label>
+      <input type="text" id="website" name="website" />
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" />
+
+      <!-- Add work experience -->
+      <div id="workExperienceContainer">
+        <h3 class="form-headings">Work Experience</h3>
+        <div class="work-experience-section">
+          <label for="startDate">Start Date:</label>
+          <input type="date" name="startDate[]" />
+          <label for="endDate">End Date:</label>
+          <input type="date" name="endDate[]" />
+          <label for="jobPosition">Job Position:</label>
+          <input type="text" name="jobPosition[]" />
+          <label for="companyName">Company Name:</label>
+          <input type="text" name="companyName[]" />
+        </div>
+      </div>
+      <button type="button" id="addExperienceBtn" class="small">Add More Experience</button>
+
+      <!-- Add skills -->
+      <div id="skillsContainer">
+        <h3 class="form-headings">Software Skills</h3>
+        <div class="skill-section">
+          <label for="softwareSkills">Skill:</label>
+          <input type="text" name="softwareSkills[]" />
+        </div>
+      </div>
+      <button type="button" id="addSkillBtn">Add More Skill</button>
+
+      <button type="submit" class="large" style="margin-top: 30px;">Generate CV</button>
+    </form>
+  </div>
+
+  <div id="cv" class="none">
+    <div class="mainDiv">
+      <!-- Resume Container One-->
+      <div class="resume-container1">
+        <!-- Profile Picture Section -->
+        <section class="profile-picture-section">
+          <div class="profile-picture-container">
+            <img src="" alt="Profile Picture" class="profile-picture" id="cvProfilePicture" />
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="cvEducationSection" class="eduDiv education">
+          <h2>Education</h2>
+          <div id="cvEducation" class="ContactDiv">
+            <h5 id="cvEduHeading"></h5>
+            <p id="cvEduUniName"></p>
+            <p id="cvEduYear"></p>
+          </div>
+        </section>
+
+        <!-- Reference Section -->
+        <section id="cvReferenceSection" class="eduDiv education">
+          <h2>Reference</h2>
+          <div id="cvReference" class="ContactDiv"></div>
+        </section>
+
+        <!-- Contact Info -->
+        <section>
+          <div class="ContactDiv">
+            <div class="title">
+              <p class="contact-title-p">Phone</p>
+            </div>
+            <p id="cvPhone" class="contact-p"></p>
+
+            <div class="title">
+              <p class="contact-title-p">Email</p>
+            </div>
+            <p id="cvEmail" class="contact-p"></p>
+
+            <div class="title">
+              <p class="contact-title-p">Website</p>
+            </div>
+            <p id="cvWebsite" class="contact-p"></p>
+
+            <div class="title">
+              <p class="contact-title-p">Address</p>
+            </div>
+            <p id="cvAddress" class="contact-p"></p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Resume Container Two -->
+      <div class="resume-container2">
+        <div class="cv-name-section">
+          <h1 id="cvName" style="margin: 0px;"></h1>
+          <p id="cvProfessionalTitle" style="margin: 0px;"></p>
+        </div>
+
+        <div class="sectionAfterYourName">
+          <div style="width: 90%;">
+            <!-- About -->
+            <h2 class="container2-h2">ABOUT ME</h2>
+            <div>
+              <p id="cvAboutMe" style="padding-top:10px; word-wrap:break-word; white-space:inherit; overflow-wrap: break-word;"></p>
+            </div>
+            <br>
+            <!-- Work Experience -->
+            <h2 class="container2-h2">Work Experience</h2>
+            <section class="work-experience">
+              <div class="workExpDiv1">
+                <p id="workExperienceStartDate" style="width: 30%;"></p>
+                <p id="workExperienceEndDate" style="width: 30%;"></p>
+                <div style="width: 100%;">
+                  <h5 id="cvJobPosition">
+                    <br />
+                    <span id="cvComName"></span>
+                  </h5>
+                </div>
+              </div>
+            </section>
+            <!-- <button id="showExperience">Toggle Work Experience</button> -->
+
+            <!-- Skills -->
+            <br />
+            <h2 class="container2-h2">Software Skills</h2>
+            <section class="skills">
+              <ul id="cvSkills"></ul>
+            </section>
+            <!-- <button id="showSkills">Toggle Skills</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center;">
+    <button id="editCv" class="none">Edit CV</button>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>

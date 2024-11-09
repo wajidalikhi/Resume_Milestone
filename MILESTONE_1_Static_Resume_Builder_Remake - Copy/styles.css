@@ -1,0 +1,253 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  /* background-color: #f4f4f4; */
+  margin: 0;
+  padding: 0;
+}
+
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  /* background-color: green; */
+}
+
+/* .resume-container1 {
+  width: 100%;
+  max-width: 300px; /
+  background-color: #212026;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px; 
+} */
+
+.resume-container2 {
+  padding: 20px 0px;
+  width: 100%;
+  max-width: 700px;
+  /* background: white; */
+  border: 1px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden; /* Prevents overflow from rotated images */
+}
+
+.resume-container2::before,
+.resume-container2::after {
+  content: "";
+  background-image: url(/images/bgimage.PNG);
+  background-repeat: no-repeat;
+  background-size: 400px;
+  position: absolute;
+  width: 500px; /* Adjust as needed for visibility */
+  height: 500px;
+  /* transform: rotate(112deg); */
+  z-index: -1;
+}
+
+.resume-container2::before {
+  top: -70px; /* Offset to ensure visibility in the top left */
+  left: -232px;
+  transform: rotate(100deg);
+}
+
+.resume-container2::after {
+  bottom: -74px; /* Offset to ensure visibility in the bottom right */
+  right: -273px;
+  transform: rotate(-76deg);
+}
+
+
+
+
+.profile-picture-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: #171717; */
+  /* height: 200px; */
+  z-index: 1;
+}
+
+.profile-picture {
+  width: 150px;
+  border: 5px solid rgb(32, 32, 120);
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.eduDiv {
+  display: flex;
+  height: 50px;
+  justify-content: start; 
+  text-transform: uppercase;
+  border-bottom: 2px solid #FECB00;
+  margin-bottom: 12px;
+  /* color: white; */
+}
+
+.education-section {
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 10%; */
+  /* color: white; */
+  line-height: 1.5;
+}
+.language-section{
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 10%; */
+  /* color: white; */
+  line-height: 1.5;
+}
+
+.ContactDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: purple; */
+  /* height: 250px;  */
+  /* margin-right: 20px; */
+  width: 150px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35px;
+  /* background: linear-gradient(to right, #FECB00 20%, #292A2F 10%); */
+}
+
+.contact-title-p {
+  margin: 0px; 
+  /* padding-left: 40px; */
+  color: white;
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+}
+
+.contact-p {
+  margin-top: 0px;
+  /* margin-left: 40px; */
+  color: white;
+  font-size: 12px;
+  color: black;
+}
+
+.cv-name-section {
+  /* background-color: #FECB00;  */
+  /* height: 100px;  */
+  display: flex; 
+  /* flex-direction: column;  */
+  /* justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.sectionAfterYourName {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.container2-h2 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
+  margin: 30px;
+}
+
+.workExpDiv1 {
+  display: flex; 
+  width: 90%; 
+  
+}
+
+.personalDetail {
+  padding: 15px;
+}
+
+section {
+  margin-bottom: 20px;
+  transition: opacity 0.3s ease;
+}
+
+button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Hide sections smoothly */
+section.hidden {
+  display: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+  .mainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .resume-container1, .resume-container2 {
+    width: 90%;
+    max-width: none;
+  }
+
+  .profile-picture-container {
+    height: 150px;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .eduDiv, .ContactDiv {
+    margin-left: 0;
+  }
+
+  .education, .ContactDiv {
+    padding-left: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-container1, .resume-container2 {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .profile-picture-container {
+    height: 120px;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact-title-p, .contact-p {
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+}
